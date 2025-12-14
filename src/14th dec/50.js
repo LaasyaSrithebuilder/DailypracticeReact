@@ -1,0 +1,19 @@
+import React, {useState, useEffect} from 'react';
+
+function HookCounterOne(){
+
+    const[count, setCount] = useState(0)
+    useEffect(() => {
+        document.title = `You clicked ${count} times`
+    });
+
+//}, [count] );  // to run only when count changes we pass [count] as second argument
+// empty array means to run only once when component mounts
+
+return(
+    <div> 
+        <button onClick = {() => setCount(count + 1)}>Click {count} times</button>
+         </div>
+)
+}
+export default HookCounterOne;
